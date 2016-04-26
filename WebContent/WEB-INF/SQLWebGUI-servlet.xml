@@ -11,8 +11,7 @@
 	<context:component-scan base-package="controller"/>
 
    
- 	<bean class="data.CompanyDao">
-	</bean>
+ 	<bean class="data.CompanyDBDao"></bean>
 	
 </beans>
         

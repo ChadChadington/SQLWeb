@@ -1,15 +1,17 @@
-<!DOCTYPE html>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %><!--   THIS HAS TO BE IN YOUR FILE -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html lang="en">
 
 <head>
 
-    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Floreo Employee Database</title>
+    <title>Project Form</title>
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
@@ -46,7 +48,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand page-scroll" href="#page-top">Floreo Company Database</a>
+                <a class="navbar-brand page-scroll" href="index.html">Home</a>
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -56,6 +58,9 @@
                         <a class="page-scroll" href="#about">About</a>
                     </li>
                    
+                    <li>
+                        <a class="page-scroll" href="#contact">Contact</a>
+                    </li>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->
@@ -66,45 +71,42 @@
     <header>
         <div class="header-content">
             <div class="header-content-inner">
-                <h1 style="color:white;">Floreo Employee Database</h1>
-                
-               <br><br><br>
+                <h1 style="color:white;">Project Form</h1>
+             <br><br><br><br><br><br>
+             <form action=”updateProject.do” method=”post”>
+			<%-- Employee ID: ${employee.id}  --%>
+			
+			
+			Project ID: <input style="color:black;" name=”projectID” value=”${project.id}” /> <br><br>
+		
+		
+			<%-- <select name=”department”>
+				<c: forEach items=”${departments}” var=”dept”>
+					<option value-“${dept.id}” label=”${dept.name}”
+						<c:if test=”${employee.department_id}= dept.id”>selected</c:if>>${dept.name}</option>
+				</c: forEach>
+				
+			</select> <input name=”jobId” value=”${employee.jobId}” /> <br />  --%>
+			<input class="btn btn-primary btn-xl page-scroll" type="submit" name="project" value="Submit" />
+			
+		</form>
+              <!--   <p style="color:grey;">Exercise freedom, pursue happiness, and make a lasting impact in the world.</p> -->
 
-				<h2>Menu</h2>
-					<br>
-					<br> 
-						<a href="listAll.do"><button type="button" class="btn btn-primary btn-lg">Show All Employees</button> </a>
-						<a href="ViewEmployee.jsp">&nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp &nbsp<button type="button" class="btn btn-primary btn-lg">Search by ID</button></a>
-					<br>
-					<br> 
-						<a href="ViewEmployee.jsp"><button type="button" class="btn btn-primary btn-lg">Update or Delete Employee</button></a> 
-						&nbsp &nbsp
-						<a href="AddEmployee.jsp"><button type="button" class="btn btn-primary btn-lg">Add Employee</button></a> 
-					<br>
-					<br>
-					
-					<!--   <p style="color:grey;">Exercise freedom, pursue happiness, and make a lasting impact in the world.</p> -->
-					<h2> SQL Query: </h2><br>
-					<form method="GET" action="process.do">
-						<textarea class="form-control" rows="3" cols="10" name="request"
-							placeholder="SELECT * FROM employees;"></textarea>
-						<br /> <input class = "btn btn-primary btn-xl page-scroll" type="submit" name="submit" value="submit" />
-					</form>
-					<!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Search</a> -->
-			</div>
+			<!-- <a href="#about" class="btn btn-primary btn-xl page-scroll">Search</a> -->
+            </div>
         </div>
     </header>
 
-    <section class="bg-primary" id="about">
+
+		
+		
+  <!--   <section class="bg-primary" id="about">
         <div class="container">
             <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 text-center">
+                <div class="col-lg-8 col-lg-offset-2 text-center"> -->
                     
                 <!--     <hr class="light"><br> -->
-                <h1>About</h1><br><br>
-                   <h3 class="section-heading">The following project uses Spring MVC, SQL, and JDBC in order to deploy a company database where a user can use menu options or SQL queries to Create, Read, Update, or Delete (CRUD) employees in the Floreo Company Database.  
-The web app uses a GUI for interaction with a  GUI Relational Database management System that permits ad-hoc queries to be run as well as shows a print out of results following user updates.
-</h3><br>
+                   <!-- <h2 class="section-heading">Find information on your employees.</h2><br> -->
 
 				
 					<!-- <p class="text-faded">I am passionate about bringing disruptive web and mobile software to market. Interests include innovative service models in healthcare and finance that unlock capabilities in social, location-based interaction, cognitive computing, and Internet of Things.
@@ -116,10 +118,10 @@ My previous experience in developing the strategy and operating model for a mobi
            		<!-- 	<hr class="light">  -->  <br><br> 
                   <!--   <a href="http://google.com" class="btn btn-default btn-xl">Pending Update</a>
                      <a href="http://google.com" class="btn btn-default btn-xl">Pending Update</a> -->
-                </div>
+      <!--           </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
 <!--     <aside class="bg-dark">
         <div class="container text-center">
@@ -130,7 +132,7 @@ My previous experience in developing the strategy and operating model for a mobi
         </div>
     </aside> -->
 
-    <section id="contact">
+   <!--  <section id="contact">
         <div class="container">
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 text-center">
@@ -148,7 +150,7 @@ My previous experience in developing the strategy and operating model for a mobi
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
 
     <!-- jQuery -->
     <script src="js/jquery.js"></script>
